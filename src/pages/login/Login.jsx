@@ -1,0 +1,47 @@
+import styles from "./Login.module.css"
+import { useState } from "react"
+import Button from "../../components/ui-component/buttons/Button"
+import { InputPassword, InputEmail } from "../../components/ui-component/inputs/Input"
+import { useNavigate } from "react-router-dom"
+
+const Login = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const navigate = useNavigate()
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const user = {
+      email,
+      password 
+    }
+    console.log(user);
+
+    setEmail("");
+    setPassword(""); 
+    navigate("/dashboard")
+    
+  }
+  return (
+    <div className={styles.container}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <InputEmail
+         label={"Email"}
+         placeholder={"example@gmail.com"}
+         value={email}
+         setValue={setEmail}
+        />
+        <InputPassword
+         label={"Password"}
+         placeholder={"password234"} 
+         value={password}
+         setValue={setPassword}
+        />
+        <Button type={"submit"} className={"success"}>Login</Button>  
+      </form>
+    </div>
+  )
+}
+
+export default Login

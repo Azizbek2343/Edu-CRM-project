@@ -1,0 +1,12 @@
+.success{
+    min-width: 120px;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    background-color: var(--success-clr);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+
+    &:hover{
+        background-color: var(--success-h-clr);
+    }
+}

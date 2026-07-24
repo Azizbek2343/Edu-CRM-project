@@ -1,0 +1,9 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    background-color: var(--primary-clr);
+    font-size: 18px;
+    font-family: sans-serif;
+}
