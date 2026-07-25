@@ -1,6 +1,7 @@
 import styles from "./Header.module.css";
 import { InputSearch } from "../ui-component/inputs/Input";
 import Button from "../ui-component/buttons/Button";
+import Modal from "../modal/Modal";
 
 const Header = ({
   placeholder = "search by name or phone number",

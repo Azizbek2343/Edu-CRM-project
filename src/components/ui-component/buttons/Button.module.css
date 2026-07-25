@@ -1,4 +1,4 @@
-.success{
+.success {
     min-width: 120px;
     padding: 10px 20px;
     border-radius: var(--radius);
@@ -6,7 +6,26 @@
     font-size: 1.4rem;
     transition: all 0.3s ease;
 
-    &:hover{
+    &:hover {
         background-color: var(--success-h-clr);
+    }
+    &:active {
+        background-color: var(--success-clr);
+    }
+}
+
+.danger {
+    min-width: 120px;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    background-color: var(--danger-clr);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: var(--danger-h-clr);
+    }
+    &:active {
+        background-color: var(--danger-clr);
     }
 }

@@ -42,19 +42,22 @@
 }
 
 
-.email {
+.email, 
+.text {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px; 
 }
 
-.email label {
+.email,
+.text label {
     font-size: 24px;
     font-family: sans-serif;
 }
 
-.email input {
+.email,
+.text input {
     width: 100%;
     padding: 8px 10px;
     border: 1px solid grey;
@@ -64,7 +67,8 @@
     outline: none;
 }
 
-.email input:focus {
+.email,
+.text input:focus {
     border: 4px solid black;
 }
 

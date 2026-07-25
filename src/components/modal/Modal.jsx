@@ -1,8 +1,10 @@
 import styles from "./Modal.module.css"
 
-const Modal = () => {
+const Modal = ({children}) => {
   return (
-    <div>Modal</div>
+    <div className={styles.modal}>
+      {children}
+      </div>
   )
 }
 
