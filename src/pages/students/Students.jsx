@@ -7,7 +7,7 @@ import AddStudentForm from "../../features/students/addStudentForm/AddStudentFor
 
 const Students = () => {
   const [searchBy, setSearchBy] = useState("");
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -16,7 +16,7 @@ const Students = () => {
         <button onClick={() => setShowModal(false)}>
           <FaXmark />
         </button>
-        <AddStudentForm />
+        <AddStudentForm setShowModal={setShowModal} />
       </Modal>)}
     <div>
         <Header setSearchBy={setSearchBy} setShowModal={setShowModal} />

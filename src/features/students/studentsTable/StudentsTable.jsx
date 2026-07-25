@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./StudentsTable.module.css";
+import Modal from "../../../components/modal/Modal";
+import { FaXmark } from "react-icons/fa6";
+import AddStudentForm from "../addStudentForm/AddStudentForm";
 
 const students = [
   {
@@ -69,6 +72,7 @@ const students = [
 
 const StudentsTable = ({ searchBy }) => {
   const [showData, setShowData] = useState(students);
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     const filteredData = students.filter(student => 
@@ -77,8 +81,23 @@ const StudentsTable = ({ searchBy }) => {
     );
 
     setShowData(filteredData)
-  }, [searchBy])
+  }, [searchBy]);
+
+  function editStudent(student) {
+    console.log("edit", student);
+    
+  }
+
   return (
+    <>
+    {showModal && (
+      <Modal >
+      <button onClick={ () => setShowModal(false)}>
+       <FaXmark />
+      </button>
+      <AddStudentForm setShowModal={setShowModal} />
+      </Modal>
+    )}
     <div className={styles.tableWrapper}>
       <table className={styles.table}>
         <thead>
@@ -101,7 +120,7 @@ const StudentsTable = ({ searchBy }) => {
               <td>{student.group}</td>
               <td>
                 <div className={styles.actions}>
-                  <button className={styles.editBtn}>Edit</button>
+                  <button className={styles.editBtn} onClick={() => editStudent(student)}>Edit</button>
                   <button className={styles.deleteBtn}>Delete</button>
                 </div>
               </td>
@@ -110,6 +129,7 @@ const StudentsTable = ({ searchBy }) => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 

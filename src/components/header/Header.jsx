@@ -12,7 +12,7 @@ const Header = ({
     <div className={styles.container}>
         <InputSearch placeholder={placeholder} setValue={setSearchBy} />
         <div onClick={() => setShowModal(true)}>
-          <Button className="success">Create</Button>
+          <Button className="success" onClick={() => setShowModal (true) } >Create</Button>
         </div>
     </div>
   )
