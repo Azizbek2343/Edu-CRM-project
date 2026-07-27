@@ -19,6 +19,7 @@
     padding: 10px 20px;
     border-radius: var(--radius);
     background-color: var(--danger-clr);
+    color: var(--primary-clr);
     font-size: 1.4rem;
     transition: all 0.3s ease;
 
@@ -27,5 +28,22 @@
     }
     &:active {
         background-color: var(--danger-clr);
+    }
+}
+
+.info {
+    min-width: 120px;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    background-color: var(--info-clr);
+    color: var(--primary-clr);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: var(--info-h-clr);
+    }
+    &:active {
+        background-color: var(--info-clr);
     }
 }
