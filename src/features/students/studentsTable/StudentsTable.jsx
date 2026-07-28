@@ -77,7 +77,8 @@ const StudentsTable = ({ searchBy }) => {
   const [deleteShowModal, setDeleteShowModal] = useState(false)
 
   useEffect(() => {
-    const filteredData = students.filter(student => 
+    const filteredData = students.filter(
+      (student) => 
       student.fullName.toLowerCase().includes(searchBy.toLowerCase()) ||
       student.phone.toLowerCase().includes(searchBy.toLowerCase()),
     );
