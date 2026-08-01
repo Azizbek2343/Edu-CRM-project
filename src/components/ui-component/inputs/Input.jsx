@@ -47,22 +47,6 @@ export const InputEmail = ({
   );
 };
 
-export const InputSearch = ({
-  placeholder = "",
-  value,
-  setValue = function () {},
-}) => {
-  return (
-    <input
-      className={styles.search}
-      type='search'
-      placeholder={placeholder}
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-     />
-  );
-};
-
 export const InputText = ({
   label = "", 
   placeholder = "",
@@ -79,6 +63,40 @@ export const InputText = ({
         value={value}
         onChange={(e) => setValue(e.target.value)} 
       />
+    </div>
+  );
+};
+
+export const InputSelectOptions = ({ value, setValue = function () {} }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const teachers = [
+    { id: 1, fullname: "Alisher" },
+    { id: 2, fullname: "Jamshidbek" },
+    { id: 3, fullname: "Nodira" },
+    { id: 4, fullname: "Otabek" },
+    { id: 5, fullname: "Gulnora" },
+  ]
+
+  const filteredTeachers = teachers.filter((teacher) =>
+    teacher.fullname.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div className={styles.selectOptions}>
+      <input 
+        type="search" 
+        placeholder='search by name' 
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <ul>
+        {filteredTeachers.map((teacher) => (
+          <li key={teacher.id} onClick={() => setValue(teacher.fullname)}>
+            {teacher.fullname}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

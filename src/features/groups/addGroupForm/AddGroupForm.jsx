@@ -1,9 +1,9 @@
 import styles from "./AddGroupForm.module.css";
-import { InputText } from "../../../components/ui-component/inputs/Input";
+import { InputText, InputSelectOptions } from "../../../components/ui-component/inputs/Input";
 import { useState } from "react";
 import Button from "../../../components/ui-component/buttons/Button";
 
-const AddGroupForm = ({setShowModal}) => {
+const AddGroupForm = ({ setShowModal }) => {
     const [name, setName] = useState("");
     const [teacher, setTeacher] = useState(null);
     const [speciality, setSpeciality] = useState(null);
@@ -40,6 +40,12 @@ const AddGroupForm = ({setShowModal}) => {
                 value={name}
                 setValue={setName}
             />
+
+            <InputSelectOptions 
+                value={teacher} 
+                setValue={setTeacher} 
+            />
+
             <div className={styles.btns}>
                 <Button onClick={handleCancel} type='reset' className="danger">
                     Cancel
