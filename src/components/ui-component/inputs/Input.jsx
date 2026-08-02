@@ -67,15 +67,29 @@ export const InputText = ({
   );
 };
 
+export const InputSearch = ({
+  placeholder = "",
+  value,
+  setValue = function() {},
+}) => {
+  return (
+      <input 
+        className={styles.search}
+        type="search" 
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+  );
+};
+
 export const InputSelectOptions = ({ value, setValue = function () {} }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const teachers = [
     { id: 1, fullname: "Alisher" },
     { id: 2, fullname: "Jamshidbek" },
-    { id: 3, fullname: "Nodira" },
-    { id: 4, fullname: "Otabek" },
-    { id: 5, fullname: "Gulnora" },
+    { id: 3, fullname: "Azizbek" },
   ]
 
   const filteredTeachers = teachers.filter((teacher) =>
