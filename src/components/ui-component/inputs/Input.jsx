@@ -1,5 +1,5 @@
 import styles from './Input.module.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa"
 
 export const InputPassword = ({
@@ -83,34 +83,51 @@ export const InputSearch = ({
   );
 };
 
-export const InputSelectOptions = ({ value, setValue = function () {} }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+export const InputSelectOptions = () => {
+  const [showData, setShowData] = useState([]);
+  const [value, setValue] = useState("");
+  const [isShow, setIsShow] = useState(false)
 
   const teachers = [
-    { id: 1, fullname: "Alisher" },
-    { id: 2, fullname: "Jamshidbek" },
-    { id: 3, fullname: "Azizbek" },
-  ]
+    { 
+      id: 1, 
+      fullname: "Alisher" 
+    },
+    { 
+      id: 2, 
+      fullname: "Jamshidbek"
+    },
+    { 
+      id: 3, 
+      fullname: "Azizbek" 
+    },
+  ];
 
-  const filteredTeachers = teachers.filter((teacher) =>
-    teacher.fullname.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  useEffect(() => {
+    const filteredData = teachers.filter(teacher => teacher.fullname.toLowerCase().includes(value.toLowerCase()));
+    setShowData(filteredData)
+  }, [value]);
+
+  function handleSelect(teacher) {
+    setValue(teacher.fullname)
+    setIsShow(false)
+  }
 
   return (
     <div className={styles.selectOptions}>
       <input 
-        type="search" 
-        placeholder='search by name' 
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+      type="search" 
+      placeholder="search by name" 
+      value={value} 
+      onChange={(e) => setValue(e.target.value)} 
       />
+      {isShow && (
       <ul>
-        {filteredTeachers.map((teacher) => (
-          <li key={teacher.id} onClick={() => setValue(teacher.fullname)}>
-            {teacher.fullname}
-          </li>
+        {showData.map((teacher) => (
+          <li key={teacher.id} onClick={() => handleSelect(teacher)}>{teacher.fullname}</li>
         ))}
       </ul>
+      )}
     </div>
   );
 };
