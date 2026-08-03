@@ -35,7 +35,7 @@ const groups = [
     teacher: "Karimov Jamshid",
     speciality: "Backend",
   },
-];
+]
 
 const GroupsTable = ({ searchBy }) => {
   const [showData, setShowData] = useState(groups);
@@ -108,7 +108,7 @@ const GroupsTable = ({ searchBy }) => {
                 </div>
               </td>
             </tr>
-          ))};
+          ))}
         </tbody>
       </table>
     </div>

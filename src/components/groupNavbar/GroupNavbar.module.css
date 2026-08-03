@@ -17,9 +17,8 @@
         &:hover {
             color: var(--info-clr);
         }
-
-        &:active {
-            color: var(--info-clr);
-        }
+    }
+    .active {
+        color: var(--info-clr);
     }
 }

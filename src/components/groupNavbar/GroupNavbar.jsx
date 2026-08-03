@@ -8,12 +8,14 @@ const GroupNavbar = () => {
     <div className={styles.container}>
         <ul>
           <li>
-            <NavLink to="" className={({ isActive }) => (isActive ? styles.active : "")}>
+            <NavLink end to="" className={({ isActive }) => (isActive ? styles.active : "")}>
               Davomat
             </NavLink>
           </li>
           <li>
-            <NavLink to="coins">Baho</NavLink>
+            <NavLink end to="coins" className={({ isActive }) => (isActive ? styles.active : "")}>
+              Baho
+            </NavLink>
           </li>
         </ul>
 
