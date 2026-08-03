@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./GroupsTable.module.css";
 import Modal from "../../../components/modal/Modal";
 import { FaXmark } from "react-icons/fa6";
@@ -89,11 +90,14 @@ const GroupsTable = ({ searchBy }) => {
             <th>Action</th>
           </tr>
         </thead>
+
         <tbody>
           {showData.map((group, index) => (
             <tr key={group.id}>
               <td>{index + 1}</td>
-              <td>{group.name}</td>
+              <td>
+                <Link to={`${group.id}`}>{group.name}</Link>
+              </td>
               <td>{group.students}</td>
               <td>{group.teacher}</td>
               <td>{group.speciality}</td>
@@ -104,7 +108,7 @@ const GroupsTable = ({ searchBy }) => {
                 </div>
               </td>
             </tr>
-          ))}
+          ))};
         </tbody>
       </table>
     </div>

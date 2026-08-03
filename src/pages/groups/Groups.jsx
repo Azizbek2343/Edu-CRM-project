@@ -7,7 +7,7 @@ import AddGroupForm from "../../features/groups/addGroupForm/AddGroupForm";
 
 const Groups = () => {
   const [searchBy, setSearchBy] = useState("");
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>

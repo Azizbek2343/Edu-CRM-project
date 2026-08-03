@@ -37,7 +37,7 @@ const App = () => {
         element: <Groups />,
       },
       {
-        path: 'groups/:slug',
+        path: 'groups/:id',
         element: <GroupsLayout />,
         children: [
           {
