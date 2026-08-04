@@ -16,7 +16,7 @@ const groups = [
   },
   {
     id: 2,
-    name: "ALG-backend-202",
+    name: "ALG-web-202",
     students: 18,
     teacher: "Azimov Alisher",
     speciality: "Backend",
@@ -30,7 +30,7 @@ const groups = [
   },
   {
     id: 4,
-    name: "ALG-backend-404",
+    name: "ALG-web-404",
     students: 22,
     teacher: "Karimov Jamshid",
     speciality: "Backend",
@@ -96,7 +96,7 @@ const GroupsTable = ({ searchBy }) => {
             <tr key={group.id}>
               <td>{index + 1}</td>
               <td>
-                <Link to={`${group.id}`}>{group.name}</Link>
+                <Link to={`${group.id}`} className={styles.groupItem}>{group.name}</Link>
               </td>
               <td>{group.students}</td>
               <td>{group.teacher}</td>

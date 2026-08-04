@@ -16,6 +16,18 @@
     background-color: #8db4ee;
 }
 
+.groupItem {
+    &:hover {
+        /* color: rgb(251, 6, 6); */
+        color: rgb(9, 9, 234);
+        font-size: 1.1rem;
+    }
+
+    &:active {
+        color: rgb(8, 8, 148);
+    }
+}
+
 .table th {
     padding: 18px;
     border: 1px solid #dcdcdc;

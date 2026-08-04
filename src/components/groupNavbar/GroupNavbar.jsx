@@ -1,10 +1,23 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../ui-component/buttons/Button";
+import Modal from "../../components/modal/Modal";
+import {FaXmark} from "react-icons/fa6";
 
 import styles from "./GroupNavbar.module.css";
 
 const GroupNavbar = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
+    <>
+    {showModal && (
+      <Modal>
+        <button onClick={() => setShowModal(false)}>
+          <FaXmark />
+        </button>
+        <h1>Add Student for group</h1>
+      </Modal>
+    )}
     <div className={styles.container}>
         <ul>
           <li>
@@ -19,8 +32,9 @@ const GroupNavbar = () => {
           </li>
         </ul>
 
-        <Button className={"success"}>Add Student</Button>
+        <Button className={"success"} onClick={() => setShowModal(true)}>Add Student</Button>
     </div>
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ import styles from "./GroupAttendance.module.css";
 
 const GroupAttendance = () => {
 
-  const students = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+  const students = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
   const lessons = [
     {
       id: 1,
@@ -21,7 +21,44 @@ const GroupAttendance = () => {
       id: 4,
       date: "8",
     },
+    {
+      id: 5,
+      date: "10",
+    },
+    {
+      id: 6,
+      date: "12",
+    },
+    {
+      id: 7,
+      date: "15",
+    },
+    {
+      id: 8,
+      date: "17",
+    },
+    {
+      id: 9,
+      date: "19",
+    },
+    {
+      id: 10,
+      date: "21",
+    },
+    {
+      id: 11,
+      date: "23",
+    },
+    {
+      id: 12,
+      date: "25",
+    },
+    {
+      id: 13,
+      date: "28",
+    },
   ];
+  
   return (
     <div>
         <div className={styles.wrapper}>
@@ -31,7 +68,7 @@ const GroupAttendance = () => {
               <div key={lesson.id} className={styles.lesson}>
                 {students.map((student, i) => {
                   return (
-                    <div key={i} className={styles.checking}>✅</div>
+                    <div key={i} className={styles.checking}></div>
                   )
                 })}
               </div>
