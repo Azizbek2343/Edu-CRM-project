@@ -84,10 +84,6 @@ export const InputSearch = ({
 };
 
 export const InputSelectOptions = () => {
-  const [showData, setShowData] = useState([]);
-  const [value, setValue] = useState("");
-  const [isShow, setIsShow] = useState(false)
-
   const teachers = [
     { 
       id: 1, 
@@ -103,31 +99,19 @@ export const InputSelectOptions = () => {
     },
   ];
 
-  useEffect(() => {
-    const filteredData = teachers.filter(teacher => teacher.fullname.toLowerCase().includes(value.toLowerCase()));
-    setShowData(filteredData)
-  }, [value]);
-
-  function handleSelect(teacher) {
-    setValue(teacher.fullname)
-    setIsShow(false)
-  }
+  function handleSelect(teacher) {}
 
   return (
     <div className={styles.selectOptions}>
       <input 
       type="search" 
       placeholder="search by name" 
-      value={value} 
-      onChange={(e) => setValue(e.target.value)} 
       />
-      {isShow && (
       <ul>
-        {showData.map((teacher) => (
-          <li key={teacher.id} onClick={() => handleSelect(teacher)}>{teacher.fullname}</li>
-        ))}
+        {teachers.map(teacher => {
+          <li key={teacher.id}>{teacher.fullname}</li>
+        })}
       </ul>
-      )}
     </div>
   );
 };

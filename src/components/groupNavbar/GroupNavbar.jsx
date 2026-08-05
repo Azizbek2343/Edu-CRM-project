@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../ui-component/buttons/Button";
-import Modal from "../../components/modal/Modal";
+import Modal from "../modal/Modal";
 import {FaXmark} from "react-icons/fa6";
 
 import styles from "./GroupNavbar.module.css";
