@@ -15,7 +15,7 @@ const StudentsOfGroup = () => {
     firstname: "Jasur",
     lastname: "Karimov"
   },
-  {
+ {
     id: 2,
     firstname: "Bekzod",
     lastname: "Tursunov"

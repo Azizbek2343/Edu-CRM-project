@@ -108,9 +108,9 @@ export const InputSelectOptions = () => {
       placeholder="search by name" 
       />
       <ul>
-        {teachers.map(teacher => {
+        {teachers.map(teacher => (
           <li key={teacher.id}>{teacher.fullname}</li>
-        })}
+        ))}
       </ul>
     </div>
   );
