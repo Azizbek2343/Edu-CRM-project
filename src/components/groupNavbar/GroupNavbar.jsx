@@ -5,6 +5,7 @@ import Modal from "../modal/Modal";
 import {FaXmark} from "react-icons/fa6";
 
 import styles from "./GroupNavbar.module.css";
+import AddGroupForm from "../../features/groups/addGroupForm/AddGroupForm";
 
 const GroupNavbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,7 +16,7 @@ const GroupNavbar = () => {
         <button onClick={() => setShowModal(false)}>
           <FaXmark />
         </button>
-        <h1>Add Student for group</h1>
+        <AddGroupForm />
       </Modal>
     )}
     <div className={styles.container}>
