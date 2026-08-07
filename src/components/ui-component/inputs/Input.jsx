@@ -140,7 +140,7 @@ export const InputSelectOptions = () => {
 
 export const InputAttendance = () => {
   const [name, setName] = useState(null);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const statuses = [
     { 
       id: 1, 
@@ -160,16 +160,16 @@ export const InputAttendance = () => {
   ];
   
   function handleSelect(status) {
-    setName(status.status);
+    setName(status.status); 
   }
 
   return (
-    <div className={styles.selectOptions}>
+    <div className={styles.attendance}>
       <div>{name}</div>
       {show && (
         <ul>
-          {status.map((status) => (
-            <li>{status.icon}</li>
+          {statuses.map((status) => (
+            <li key={status.id}>{status.icon}</li>
           ))}
         </ul>
       )}
