@@ -1,6 +1,7 @@
 import styles from './Input.module.css'
 import { useEffect, useState } from 'react';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa"
+import { FaXmark, FaCheck, FaClock } from 'react-icons/fa6';
 
 export const InputPassword = ({
   label = "Password",
@@ -132,6 +133,45 @@ export const InputSelectOptions = () => {
           <li key={teacher.id} onClick={() => handleSelect(teacher)}>{teacher.fullname}</li>
         ))}
       </ul>
+      )}
+    </div>
+  );
+};
+
+export const InputAttendance = () => {
+  const [name, setName] = useState(null);
+  const [show, setShow] = useState(false);
+  const statuses = [
+    { 
+      id: 1, 
+      icon: <FaXmark />,
+      status: true,
+    },
+    { 
+      id: 2, 
+      icon: <FaCheck />,
+      status: false,
+    },
+    { 
+      id: 3, 
+      icon: <FaClock />,
+      status: undefined, 
+    },
+  ];
+  
+  function handleSelect(status) {
+    setName(status.status);
+  }
+
+  return (
+    <div className={styles.selectOptions}>
+      <div>{name}</div>
+      {show && (
+        <ul>
+          {status.map((status) => (
+            <li>{status.icon}</li>
+          ))}
+        </ul>
       )}
     </div>
   );

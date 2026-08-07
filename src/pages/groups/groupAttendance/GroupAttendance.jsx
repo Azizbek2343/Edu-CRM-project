@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import styles from "./GroupAttendance.module.css";
+import { InputAttendance } from "../../../components/ui-component/inputs/Input";
 
 const GroupAttendance = () => {
 
@@ -68,7 +69,9 @@ const GroupAttendance = () => {
               <div key={lesson.id} className={styles.lesson}>
                 {students.map((student, i) => {
                   return (
-                    <div key={i} className={styles.checking}></div>
+                    <div key={i} className={styles.checking}>I
+                      <InputAttendance />
+                    </div>
                   )
                 })}
               </div>
