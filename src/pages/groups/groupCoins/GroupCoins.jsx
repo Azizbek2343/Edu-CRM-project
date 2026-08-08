@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import styles from "./GroupCoins.module.css";
+import { InputCoin } from "../../../components/ui-component/inputs/Input";
 
 const GroupCoins = () => {
   const students = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
@@ -67,7 +68,7 @@ const GroupCoins = () => {
                 <div key={lesson.id} className={styles.lesson}>
                   {students.map((student, i) => {
                     return (
-                      <div key={i} className={styles.coin}></div>
+                      <InputCoin key={i} />
                     )
                   })}
                 </div>

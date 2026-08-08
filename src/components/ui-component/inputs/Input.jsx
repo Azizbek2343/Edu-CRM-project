@@ -1,7 +1,7 @@
 import styles from './Input.module.css'
 import { useEffect, useState } from 'react';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa"
-import { FaXmark, FaCheck, FaClock } from 'react-icons/fa6';
+import { FaXmark, FaCheck, FaClock, FaMinus } from 'react-icons/fa6';
 
 export const InputPassword = ({
   label = "Password",
@@ -140,7 +140,7 @@ export const InputSelectOptions = () => {
 
 export const InputAttendance = () => {
   const [name, setName] = useState(null);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const statuses = [
     { 
       id: 1, 
@@ -157,19 +157,49 @@ export const InputAttendance = () => {
       icon: <FaClock />,
       status: undefined, 
     },
+    { 
+      id: 4, 
+      icon: <FaMinus />,
+      status: null, 
+    },
   ];
   
   function handleSelect(status) {
-    setName(status.status); 
+    setName(status); 
+    setShow(false);
   }
 
   return (
     <div className={styles.attendance}>
-      <div>{name}</div>
+      <div onClick={() => setShow(true)}>{name?.status === null ? "" : name?.icon}</div>
       {show && (
         <ul>
           {statuses.map((status) => (
-            <li key={status.id}>{status.icon}</li>
+            <li key={status.id} onClick={() => handleSelect(status)}>{status.icon}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export const InputCoin = () => {
+  const [grade, setGrade] = useState(null);
+  const [show, setShow] = useState(false);
+  const coins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  
+  function handleSelect(coin) {
+    coin ? setGrade : setGrade(null); 
+    setShow(false);
+  }
+
+  return (
+    <div className={styles.coins}>
+      <div onClick={() => setShow(true)}>{grade}</div>
+      {show && (
+        <ul>
+          {coins.map((coin) => (
+            <li key={coin.id} onClick={() => handleSelect(coin)}>{coin}</li>
           ))}
         </ul>
       )}

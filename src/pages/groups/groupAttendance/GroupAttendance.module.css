@@ -14,14 +14,3 @@
     flex-direction: column;
     gap: 15px;
 }
-
-.checking {
-    border: 1px solid black;
-    border-radius: 8px;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

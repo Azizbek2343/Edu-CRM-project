@@ -69,9 +69,7 @@ const GroupAttendance = () => {
               <div key={lesson.id} className={styles.lesson}>
                 {students.map((student, i) => {
                   return (
-                    <div key={i} className={styles.checking}>I
-                      <InputAttendance />
-                    </div>
+                      <InputAttendance key={i} />
                   )
                 })}
               </div>
